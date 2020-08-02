@@ -13,6 +13,22 @@ class Rational(n: Int, d: Int) {
       numer * that.denom + denom * that.numer,
       denom * that.denom
     )
+  def + (i: Int): Rational =
+    new Rational(
+      numer + i * denom,
+      denom
+    )
+
+  def - (that: Rational): Rational =
+    new Rational(
+      numer * that.denom - denom * that.numer,
+      denom * that.denom
+    )
+  def - (i: Int): Rational = new Rational(
+    numer - i * denom,
+    denom
+  )
+
   def * (that: Rational): Rational =
     new Rational(
       numer * that.numer, denom * that.denom
