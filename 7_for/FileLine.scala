@@ -30,3 +30,9 @@ def grep2(pattern: String) =
     trimmed = line.trim
     if trimmed.matches(pattern)
   } print(file + ": " + trimmed)
+
+def scalaFiles =
+  for {
+    file <- fileHere
+    if file.getName.endsWith(".scala")
+  } yield file
