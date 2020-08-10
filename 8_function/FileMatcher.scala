@@ -1,16 +1,17 @@
 object FileMatcher {
   private def filesHere = (new java.io.File(".")).listFiles
 
+  private def filesMatching(matcher: (String, String) => Boolean) =
+    for (file <- filesHere; if matcher(file.getName))
+      yield file
+
   def filesEnding(query: String) =
-    filesMatching(query, _.endsWith(_))
+    filesMatching(query, _.endsWith(query))
 
   def filesContain(query: String) =
-    filesMatching(query, _.contains(_))
+    filesMatching(query, _.contains(query))
 
   def filesMatch(query: String) =
-    filesMatching(query, _.matches(_))
+    filesMatching(query, _.matches(query))
 
-  def filesMatching(query: String, matcher: (String, String) => Boolean) =
-    for (file <- filesHere; if matcher(file.getName, query))
-      yield file
 }
