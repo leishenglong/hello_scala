@@ -1,2 +1,5 @@
 *.class
 .idea/
+.bsp/
+*/target/
+target/
