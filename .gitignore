@@ -3,3 +3,4 @@
 .bsp/
 */target/
 target/
+.DS_Store
