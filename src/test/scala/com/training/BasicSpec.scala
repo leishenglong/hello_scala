@@ -26,6 +26,26 @@ class BasicSpec extends AnyWordSpec with Matchers {
 
       biggerThan2 shouldEqual List(4, 5, 7, 9)
     }
+
+    "partially applied function" in {
+      def sum(a: Int, b: Int, c: Int) = a + b + c
+
+      sum(1, 2, 3) shouldEqual 6
+    }
+
+    "partially applied function v2" in {
+      def sum(a: Int, b: Int, c: Int) = a + b + c
+      val a = sum _
+
+      a(1, 2, 3) shouldEqual 6
+    }
+
+    "partially applied function given need one more parameter" in {
+      def sum(a: Int, b: Int, c: Int) = a + b + c
+      val b = sum(1, _, 4)
+
+      b(2) shouldEqual 7
+    }
   }
 
 }
