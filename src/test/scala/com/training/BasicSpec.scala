@@ -46,6 +46,35 @@ class BasicSpec extends AnyWordSpec with Matchers {
 
       b(2) shouldEqual 7
     }
+
+    "return exist result using var" in {
+      def containsNeg(nums: List[Int]): Boolean = {
+        var exists = false
+        for (num <- nums) {
+          if (num < 0) exists = true
+        }
+        exists
+      }
+
+      val nums1 = List(1, 2, 3, 0)
+      containsNeg(nums1) shouldEqual false
+
+      val nums2 = List(1, 2, 3, -4, 0)
+      containsNeg(nums2) shouldEqual true
+    }
+
+    "return exist result using val" in {
+      def containsNeg(nums: List[Int]): Boolean = {
+        nums.exists(_ < 0)
+      }
+
+      val nums1 = List(1, 2, 3, 0)
+      containsNeg(nums1) shouldEqual false
+
+      val nums2 = List(1, 2, 3, -4, 0)
+      containsNeg(nums2) shouldEqual true
+    }
+
   }
 
 }
