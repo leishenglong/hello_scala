@@ -17,7 +17,14 @@ class BasicSpec extends AnyWordSpec with Matchers {
       val someNumbers = List(1, 0, 4, 5, 7, 2, 9)
       val biggerThan2 = someNumbers.filter(n => n >= 3)
 
-      biggerThan2 shouldEqual List(4,5,7,9)
+      biggerThan2 shouldEqual List(4, 5, 7, 9)
+    }
+
+    "show filter with underscores" in {
+      val someNumbers = List(1, 0, 4, 5, 7, 2, 9)
+      val biggerThan2 = someNumbers.filter(_ >= 3)
+
+      biggerThan2 shouldEqual List(4, 5, 7, 9)
     }
   }
 
