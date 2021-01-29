@@ -2,6 +2,12 @@ package com.training.rational
 
 class Rational(n: Int, d: Int) {
   require(d != 0)
-  override def toString = s"$n/$d"
+
+  val numer: Int = n
+  val denom: Int = d
+
+  override def toString = s"$numer/$denom"
+
+  def add(that: Rational) = new Rational(numer * that.denom + denom * that.numer, denom * that.denom)
 }
 

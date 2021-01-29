@@ -17,6 +17,14 @@ class RationalSpec extends AnyWordSpec with Matchers {
         new Rational(5, 0)
       }
     }
+
+    "return added rational given two different rational" in {
+      val r1 = new Rational(2, 1)
+      val r2 = new Rational(3, 1)
+
+      (r1 add r2).numer shouldEqual 5
+      (r1 add r2).denom shouldEqual 1
+    }
   }
 
 }
