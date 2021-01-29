@@ -8,6 +8,8 @@ class Rational(n: Int, d: Int) {
 
   override def toString = s"$numer/$denom"
 
+  def this(n: Int) = this(n, 1)
+
   def add(that: Rational) = new Rational(numer * that.denom + denom * that.numer, denom * that.denom)
 }
 

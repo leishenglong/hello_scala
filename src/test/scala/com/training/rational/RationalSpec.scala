@@ -12,6 +12,11 @@ class RationalSpec extends AnyWordSpec with Matchers {
       println(rational)
     }
 
+    "Constructing a Rational given an auxiliary constructor" in {
+      val rational = new Rational(3)
+      rational.numer shouldEqual 3
+    }
+
     "not allowed 0 denominator" in {
       the[IllegalArgumentException] thrownBy {
         new Rational(5, 0)
