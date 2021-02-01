@@ -13,5 +13,5 @@ A project to show demo code from learning <I>Programming in Scala</I>
 ## How to run?
 
 ```shell
-$ sbt clean test
+$ sbt clean coverage test coverageReport
 ```
