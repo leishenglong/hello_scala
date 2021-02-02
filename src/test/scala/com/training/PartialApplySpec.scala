@@ -30,4 +30,14 @@ class PartialApplySpec extends AnyWordSpec with Matchers {
     }
   }
 
+  "Partial function" should {
+    "try PartialFunction" in {
+      def pAnswerUnits: PartialFunction[Int, Int] = {
+        case d: Int if d != 0 => 42 / d
+      }
+
+      pAnswerUnits(42) shouldEqual 1
+    }
+  }
+
 }
