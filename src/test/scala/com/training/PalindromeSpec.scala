@@ -3,8 +3,6 @@ package com.training
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.wordspec.AnyWordSpec
 
-import scala.reflect.internal.util.StringOps.words
-
 
 class PalindromeSpec extends AnyWordSpec with Matchers {
 
