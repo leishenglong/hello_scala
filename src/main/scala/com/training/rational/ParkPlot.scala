@@ -2,16 +2,30 @@ package com.training.rational
 
 import scala.:+
 
-case class ParkPlot(size: Int,
-                    var cars: List[Car] = List.empty) {
+case class ParkPlot(
+                    var cars: Array[Car]  = Array.empty) {
+  def this(size : Int){
+    this(new Array[Car](size))
+  }
   def parkingCar(car: Car): Int = {
-    cars = cars :+ car
-    cars.size
+
+    for ( i <- 0 until cars.length) {
+      if(cars(i)==null){
+        cars(i) = car
+        return i
+      }
+    }
+    -1
   }
 
   def movingCar(position: Int): Car = {
-    val car = cars(position - 1)
-    cars = cars diff List(car)
-    car
+    for ( i <- 0 until cars.length) {
+      if(i==position){
+        val car = cars(i)
+        cars(i) = null
+        return car
+      }
+    }
+    null
   }
 }
