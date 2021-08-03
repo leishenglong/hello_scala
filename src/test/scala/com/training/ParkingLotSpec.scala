@@ -23,6 +23,13 @@ class ParkingLotSpec extends AnyWordSpec with Matchers {
       p shouldEqual 2
     }
 
+    "given car and plot when parked car then return car" in {
+      val parkPlot = ParkPlot(10, List(Car("123")))
+      parkPlot.movingCar(1) shouldEqual Car("123")
+      parkPlot.cars.size shouldEqual 0
+    }
+
+
 
   }
 
