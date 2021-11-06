@@ -10,7 +10,7 @@ class ParkingLotSpec extends AnyWordSpec with Matchers {
 
     "given car and plot when parking Car then return position" in {
       val car = Car("111")
-      val parkPlot = Park(new Array[Car](2))
+      val parkPlot = Park(0, new Array[Car](2))
       val position = parkPlot.parkingCar(car);
       position shouldEqual 0
       val p = parkPlot.parkingCar(Car("112"))
@@ -18,12 +18,12 @@ class ParkingLotSpec extends AnyWordSpec with Matchers {
     }
 
     "given car and plot when moving car then return car" in {
-      val parkPlot = Park( Array(Car("123")))
+      val parkPlot = Park(0, Array(Car("123")))
       parkPlot.movingCar(0) shouldEqual Car("123")
     }
 
     "given two cars and plot when moving one by one then return cars by orderly" in {
-      val parkPlot = Park( Array(Car("123"), Car("456")))
+      val parkPlot = Park(0, Array(Car("123"), Car("456")))
 
       val firstCar = parkPlot.movingCar(0)
       firstCar shouldEqual Car("123")
