@@ -11,6 +11,7 @@ object AnonymousFunction {
   }
 
 
+  //List[Char],List[Int])=>List[String]
   val combine:(List[Char],List[Int])=>List[String]=(chars: List[Char], numbers: List[Int])=>
     for {
       char <- chars
