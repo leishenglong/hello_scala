@@ -20,4 +20,13 @@ object AnonymousFunction {
 
 
 
+  val combine2:(List[Char],List[Int])=>List[String]=(chars,numbers)=>
+    for {
+      char <- chars
+      number <- numbers
+    } yield char + "" + number
+
+
+  val justNopameter=()=>2
+
 }
