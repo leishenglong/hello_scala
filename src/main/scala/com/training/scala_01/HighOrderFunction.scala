@@ -28,7 +28,7 @@ object HighOrderFunction {
   def fibonacciSequence(i: Int, map: Map[Int, Int]): String = {
     if (i == 1) return "0"
     if (i == 2) return "0 1"
-    if (i > 1) {
+    if (i > 2) {
       var str = "0 1"
       for (x <- 3 to i) {
         map += (x->(map(x-1)+map(x-2)))
