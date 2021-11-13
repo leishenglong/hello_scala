@@ -30,19 +30,19 @@ class HigherOrderFunctionTest extends AnyWordSpec with Matchers {
    * 3:0 1 1
    * 4:0 1 1 2
    * 5:0 1 1 2 3
-   * 6:0 1 1 2 3 5
-   * 7:0 1 1 2 3 5 8
-   * 8:0 1 1 2 3 5 8 13
    */
 
   "Fibonacci sequence" should{
-    "given 0 then return 0"in{
-      val map=Map(1->0,2->1)
-        fibonacciSequence(0,map) shouldEqual "0"
+    "given 1 then return 0"in{
+        fibonacciSequence(1,Map.empty) shouldEqual "0"
     }
-    "given 2 then return 0 1 1"in{
+    "given 2 then return 0 1"in{
+        fibonacciSequence(2,Map.empty) shouldEqual "0 1"
+    }
+
+    "given 3 then return 0 1 1"in{
       val map=Map(1->0,2->1)
-        fibonacciSequence(3,map) shouldEqual "0 1 1"
+      fibonacciSequence(3,map) shouldEqual "0 1 1"
     }
 
     "given 6 then return 0 1 1"in{

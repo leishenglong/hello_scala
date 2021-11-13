@@ -34,12 +34,12 @@ object HighOrderFunction {
 
 
   def generateNext(a: Int, b: Int): Int = a + b
-  def fibonacciSequence(i: Int, map: mutable.Map[Int, Int]): String = {
-    if (i == 1) return "0"
-    if (i == 2) return "0 1"
+  def fibonacciSequence(index: Int, map: mutable.Map[Int, Int]): String = {
+    if (index == 1) return "0"
+    if (index == 2) return "0 1"
     var str = "0 1"
-    if (i > 2) {
-      for (x <- 3 to i) {
+    if (index > 2) {
+      for (x <- 3 to index) {
         map += (x -> (map(x - 1) + map(x - 2)))
         str = str.concat(" " + (map(x - 1) + map(x - 2)))
       }
