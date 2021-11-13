@@ -32,16 +32,17 @@ object HighOrderFunction {
 
   def generateNext(a: Int, b: Int): Int = a + b
   def fibonacciSequence(index: Int, map: mutable.Map[Int, Int]): String = {
-    if (index == 1) return "0"
-    if (index == 2) return "0 1"
-    var str = "0 1"
-    if (index > 2) {
+    if (index == 1)  "0"
+    else if (index == 2)  "0 1"
+    else {
+      var str = "0 1"
       for (x <- 3 to index) {
+        //str=str.concat(" "+(1+2))
         map += (x -> (map(x - 1) + map(x - 2)))
-        str = str.concat(" " + (map(x - 1) + map(x - 2)))
+        str=str.concat(" " + (map(x - 1) + map(x - 2)))
       }
+      str
     }
-    str
   }
 
 }
