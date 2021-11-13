@@ -19,7 +19,6 @@ object HighOrderFunction {
   val plus10 = callNTimeBetter(plusOne, 10)
   println(plus10(1))
 
-
   val superAdd: Int => (Int => Int) = (a: Int) => (b: Int) => a + b
   //  val superAdd:Int=>Int=>Int=(a:Int)=>(b:Int)=>a+b
 
@@ -30,8 +29,6 @@ object HighOrderFunction {
   val standardFormat:Double=>String=curriedFormatter("%4.2f")
   val preciseFormat:Double=>String=curriedFormatter("%10.8f")
   curriedFormatter("")(0.9)
-
-
 
   def generateNext(a: Int, b: Int): Int = a + b
   def fibonacciSequence(index: Int, map: mutable.Map[Int, Int]): String = {
