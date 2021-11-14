@@ -5,7 +5,7 @@ import org.scalatest.wordspec.AnyWordSpec
 
 import scala.collection.immutable.Stream.cons
 
-class CaseClassTest extends AnyWordSpec with Matchers{
+class CaseClass extends AnyWordSpec with Matchers{
 
   case class Dog(name: String, breed: String)
   val d1 = Dog("Scooby", "Doberman")

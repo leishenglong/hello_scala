@@ -3,7 +3,7 @@ package com.training.scala_01
 
 import java.time.LocalDate
 
-object ClassTest {
+object ClassDemo {
 
   def main(args: Array[String]): Unit = {
     val user = new User(LocalDate.now(),"tyz")

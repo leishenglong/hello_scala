@@ -1,6 +1,6 @@
 package com.training.scala_01
 
-object CaseClassTest extends App {
+object CaseClass extends App {
 
 
 
