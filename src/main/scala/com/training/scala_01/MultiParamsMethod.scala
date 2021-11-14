@@ -2,7 +2,7 @@ package com.training.scala_01
 
 
 //柯里化
-object MultiParamsMethodTest {
+object MultiParamsMethod {
 
   def main(args: Array[String]) {
     val str1: String = "Hello, "
