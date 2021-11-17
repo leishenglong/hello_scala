@@ -1,4 +1,4 @@
-import sbt.librarymanagement.Configurations.Test
+import sbt.Test
 
 name := "hello_scala"
 version := "1.0.0"
@@ -11,7 +11,8 @@ libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "3.1.1" % Test,
   "org.scalatestplus" %% "mockito-3-2" % "3.1.1.0" % Test,
   "org.typelevel" %% "cats-core" % "2.3.0" % Test,
-  "org.typelevel" %% "cats-effect" % "2.5.3" withSources() withJavadoc(),
+  "org.typelevel" %% "cats-effect" % "2.2.0" withSources() withJavadoc(),
+  "org.typelevel" %% "cats-effect-laws" % "2.2.0" withSources() withJavadoc(),
   "com.huaban" % "jieba-analysis" % "1.0.2"
 )
 scalacOptions ++= Seq(
