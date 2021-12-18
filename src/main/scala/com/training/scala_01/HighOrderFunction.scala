@@ -25,6 +25,12 @@ object HighOrderFunction {
   val add=superAdd(3)//= b=>3+b
   add(4)//=7
 
+  val currFunc :Function1[Int,Function1[Int,Int]]= new Function1[Int,Function1[Int,Int]] {
+    override def apply(x: Int):  Function[Int,Int]=new Function[Int,Int] {
+      override def apply(y: Int): Int = x+y
+    }
+  }
+
   def curriedFormatter(c:String)(d:Double):String=c.format(d)
   val standardFormat:Double=>String=curriedFormatter("%4.2f")
   val preciseFormat:Double=>String=curriedFormatter("%10.8f")
